@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 import boto3
 
-df = pd.read_csv("./liberty_import.csv")
+df = pd.read_csv("../liberty_import.csv")
 
 jpeg_files = glob("./image_work/*.jpeg")
 def requester_and_uploader(x):
@@ -13,7 +13,7 @@ def requester_and_uploader(x):
             resp = requests.get(x, stream=True)
             file = open(file_name, "wb")
             file.write(resp.content)
-            print("NEW");
+            print("NEW")
         else:
             print("Already Done")
         
