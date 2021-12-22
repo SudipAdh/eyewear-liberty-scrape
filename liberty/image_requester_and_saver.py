@@ -8,7 +8,7 @@ df = pd.read_csv("../liberty_import.csv")
 jpeg_files = glob("./image_work/*.jpeg")
 def requester_and_uploader(x):
     if x and not isinstance(x, float):
-        file_name = x.rsplit("/", 1)[-1].split(".")[0]+".jpeg"
+        file_name = "./image_work/"+x.rsplit("/", 1)[-1].split(".")[0]+".jpeg"
         if not "./image_work/"+file_name in jpeg_files:
             resp = requests.get(x, stream=True)
             file = open(file_name, "wb")
